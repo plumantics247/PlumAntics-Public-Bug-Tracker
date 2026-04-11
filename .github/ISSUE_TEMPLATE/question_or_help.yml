@@ -1,0 +1,94 @@
+name: Question or Help
+description: How do I do X? Is this a bug? How do I install?
+title: "[Question] "
+labels: ["status:needs-triage", "type:support"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a question about the mods or need help with something?
+        
+        We're happy to help!
+        
+        **This form is for:**
+        - "How do I use this feature?"
+        - "Is this a bug or does it work this way?"
+        - "How do I install the mod?"
+        - "Does it work with X pack?"
+        - "Why can't I see the interaction?"
+
+  - type: dropdown
+    id: mod_name
+    attributes:
+      label: Which mod?
+      description: What mod is your question about?
+      options:
+        - "Big 3 Mod (Astrological Aspirations)"
+        - "Simstrology Career Mod"
+        - "Simstrology Degree Mod"
+        - "Simstrology Skill Mod"
+        - "Simstrology Childhood Mod"
+        - "Not sure"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: question_type
+    attributes:
+      label: Question type
+      description: What's your question about?
+      options:
+        - "Installation / setup"
+        - "How does a feature work?"
+        - "Is this a bug?"
+        - "Compatibility / pack versions"
+        - "Something else"
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: |
+        Ask away! The more detailed, the better we can help.
+        
+        Example:
+        - "I installed the mod but I don't see the new interaction anywhere. What am I missing?"
+        - "Does this work with Eco Lifestyle?"
+        - "How do I get the new trait to show up?"
+      placeholder: "What would you like to know?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_tried
+    attributes:
+      label: What have you already tried?
+      description: |
+        Tell us what you've tried so far.
+        
+        Examples:
+        - Restarted the game
+        - Checked the docs
+        - Looked on Patreon
+        - Tried with just this mod (no others)
+      placeholder: "What have you tried so far?"
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context (optional)
+      description: |
+        Any other info that might help?
+        
+        Examples:
+        - "I'm new to mods"
+        - "Using console version"
+        - "Have X pack and Y pack"
+        - "Just updated to the latest patch"
+      placeholder: "Any extra context..."
+    validations:
+      required: false

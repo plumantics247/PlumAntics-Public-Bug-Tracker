@@ -1,0 +1,125 @@
+name: Compatibility Issue
+description: Two mods are fighting with each other
+title: "[Compatibility] "
+labels: ["status:needs-triage", "type:compatibility"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this! When mods conflict, it helps us document it so other players know.
+        
+        **What we're looking for:**
+        - One mod (or more) stops working when used with another
+        - Features get disabled or break when both are installed
+        - It works fine if you remove either mod
+
+  - type: dropdown
+    id: plumantics_mod
+    attributes:
+      label: Which PlumAntics mod?
+      description: Which of our mods is involved?
+      options:
+        - "Big 3 Mod (Astrological Aspirations)"
+        - "Simstrology Career Mod"
+        - "Simstrology Degree Mod"
+        - "Simstrology Skill Mod"
+        - "Simstrology Childhood Mod"
+        - "Multiple PlumAntics mods"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: PlumAntics mod version
+      description: What version are you using?
+      placeholder: "Example: 2.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: conflicting_mod
+    attributes:
+      label: Other mod name
+      description: What's the name of the mod that conflicts with PlumAntics?
+      placeholder: "Example: Slice of Life, MCCC, etc."
+    validations:
+      required: true
+
+  - type: input
+    id: conflicting_creator
+    attributes:
+      label: Other mod creator (if known)
+      description: Who made the other mod? (Don't worry if you don't know)
+      placeholder: "Example: k2 (@kahlore), UI Cheats Extension by weerbestand"
+    validations:
+      required: false
+
+  - type: textarea
+    id: symptoms
+    attributes:
+      label: What happens when both mods are installed?
+      description: |
+        Describe the conflict. What breaks or stops working?
+        
+        Example:
+        - Feature from PlumAntics mod disappears
+        - Game crashes when loading
+        - Interactions are missing
+        - Progression stops working
+      placeholder: "Describe what goes wrong..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: disappears
+    attributes:
+      label: Does it disappear when you remove one mod?
+      description: Does the issue go away if you disable either the PlumAntics mod OR the other mod?
+      options:
+        - "Yes, issue goes away if I disable PlumAntics mod"
+        - "Yes, issue goes away if I disable the other mod"
+        - "Yes, issue goes away with either one disabled"
+        - "No, problem persists"
+        - "Haven't tested yet"
+    validations:
+      required: true
+
+  - type: textarea
+    id: testing
+    attributes:
+      label: Testing notes
+      description: |
+        If you've tested, tell us what you found.
+        
+        Example:
+        - Tested with MCCC disabled: PlumAntics features work fine
+        - Tested without Slice of Life: Career progression works again
+      placeholder: "What did you test and find?"
+    validations:
+      required: false
+
+  - type: textarea
+    id: proof
+    attributes:
+      label: Screenshots or logs
+      description: |
+        Not required, but helpful!
+        
+        Examples:
+        - Screenshot showing missing feature
+        - Error message
+        - Mod list screenshot
+      placeholder: "Drag & drop images or describe proof..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before you submit...
+      options:
+        - label: I've tested with the mods separately to confirm they conflict
+          required: true
+        - label: This is about two specific mods conflicting, not a general bug
+          required: true

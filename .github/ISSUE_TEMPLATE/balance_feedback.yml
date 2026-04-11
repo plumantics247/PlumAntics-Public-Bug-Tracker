@@ -1,0 +1,99 @@
+name: Balance Feedback
+description: A feature feels too strong, too weak, too frequent, or unfair
+title: "[Feedback] "
+labels: ["status:needs-triage", "type:balance"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an opinion on how a feature plays?
+        
+        **This form is for:**
+        - "This trait is way too powerful"
+        - "This skill levels too slowly"
+        - "The interaction happens too often"
+        - "This feels unfair or unbalanced"
+        
+        **This form is NOT for:**
+        - Technical bugs (use Bug Report instead)
+        - Questions about how things work (use Question instead)
+        
+        We read balance feedback, but we don't always change things. We make our best judgment on keeping mods fun and fair for the types of gameplay they're meant for.
+
+  - type: dropdown
+    id: mod_name
+    attributes:
+      label: Which mod?
+      description: What mod's feature are you giving feedback on?
+      options:
+        - "Big 3 Mod (Astrological Aspirations)"
+        - "Simstrology Career Mod"
+        - "Simstrology Degree Mod"
+        - "Simstrology Skill Mod"
+        - "Simstrology Childhood Mod"
+    validations:
+      required: true
+
+  - type: input
+    id: feature
+    attributes:
+      label: Feature or trait involved
+      description: What specifically feels off-balance?
+      placeholder: "Example: Sun Sign trait, Medical career, Aspect skill, etc."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: direction
+    attributes:
+      label: What's the issue?
+      options:
+        - "Too strong / overpowered"
+        - "Too weak / underpowered"
+        - "Happens too often"
+        - "Happens too rarely"
+        - "Something else feels unfair"
+    validations:
+      required: true
+
+  - type: textarea
+    id: observation
+    attributes:
+      label: What are you seeing in gameplay?
+      description: |
+        Describe what's happening when you play.
+        
+        Example:
+        - "Sims with this trait always succeed no matter what"
+        - "This skill never seems to progress even with practice"
+        - "The moodlet triggers every day and it's annoying"
+      placeholder: "Describe the gameplay experience..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Your suggestion (optional)
+      description: |
+        If you have an idea for how to fix it, share it!
+        
+        But don't worry if you don't. We appreciate the feedback either way.
+        
+        Examples:
+        - "Maybe reduce the bonus from 50% to 30%"
+        - "Make it trigger weekly instead of daily"
+        - "Increase skill gains by 2x"
+      placeholder: "Got an idea? Share it..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Important...
+      options:
+        - label: I understand this is feedback, not a bug report (feature is working as coded, but feels off-balance)
+          required: true
+        - label: I'm okay if this feedback doesn't result in a change (we balance based on playstyle, not all opinions)
+          required: true

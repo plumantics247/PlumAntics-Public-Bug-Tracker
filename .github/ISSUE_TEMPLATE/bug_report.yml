@@ -1,0 +1,156 @@
+name: Bug Report
+description: Something isn't working right
+title: "[Bug] "
+labels: ["status:needs-triage", "type:bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Fill in what you can. Only the fields marked with * are required.
+        
+        **Most helpful:** Step-by-step instructions (I clicked X, then Y, then Z happened) + screenshot
+
+  - type: dropdown
+    id: mod_name
+    attributes:
+      label: Which mod?
+      description: What mod is the issue with?
+      options:
+        - "Big 3 Mod (Astrological Aspirations)"
+        - "Simstrology Career Mod"
+        - "Simstrology Degree Mod"
+        - "Simstrology Skill Mod"
+        - "Simstrology Childhood Mod"
+        - "Not sure / Multiple mods"
+    validations:
+      required: true
+
+  - type: input
+    id: mod_version
+    attributes:
+      label: Mod version
+      description: What version of the mod are you using? (Usually in the mod folder name or Patreon page)
+      placeholder: "Example: 2.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: game_version
+    attributes:
+      label: Game version (optional)
+      description: If you know it, great! In-game > About. Not critical.
+      placeholder: "Example: 1.100.134"
+    validations:
+      required: false
+
+  - type: textarea
+    id: installed_packs
+    attributes:
+      label: Installed Packs
+      description: |
+        Which expansion packs, game packs, or stuff packs do you have?
+        
+        (This helps us see if the issue only happens with certain packs)
+        
+        Example:
+        - Eco Lifestyle
+        - Snowy Escape
+        - Cottage Living
+      placeholder: "List the packs you have..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Brief summary
+      description: One or two sentences about what's wrong
+      placeholder: "Example: Sims with this trait don't get the promised moodlet"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: "What happened? *"
+      description: |
+        Describe what you saw. Example: "Trait appeared but nothing changed" or "Got stuck, had to restart"
+      placeholder: "What actually happened..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_expected
+    attributes:
+      label: "What should have happened? *"
+      description: What did you expect instead?
+      placeholder: "What you expected to happen..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to repeat the bug *"
+      description: "Tell us how to make it happen. Example: 1. Create Sim with X trait 2. Go to Y location 3. Click on Z 4. Bug happens"
+      placeholder: |
+        1. [First step]
+        2. [Second step]
+        3. [etc...]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: "How often does this happen? *"
+      description: ""
+      options:
+        - "Every time"
+        - "Usually / most times"
+        - "Sometimes / random"
+        - "Once / hard to repeat"
+    validations:
+      required: true
+
+  - type: textarea
+    id: other_mods
+    attributes:
+      label: "Other gameplay mods installed? (optional)"
+      description: "List any other mods you have. Helps us spot conflicts. Example: MCCC, UI Cheats, Slice of Life"
+      placeholder: "Mod names (doesn't need to be exact)..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: error_text
+    attributes:
+      label: "Error messages? (optional)"
+      description: "If you saw an error in Better Exceptions, MCCC, or console, paste it here. Screenshot also welcome."
+      placeholder: "Paste error or describe it..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot or proof
+      description: |
+        Not required, but helpful!
+        
+        You can drag & drop images here.
+        
+        A screenshot of the bug or error message is great.
+      placeholder: "Drag & drop a screenshot, or describe any proof..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: "Before submitting..."
+      options:
+        - label: "I've searched [known issues](../../docs/known-issues.md) and [open issues](../../issues) first"
+          required: true
+        - label: "This is a technical bug, not a question about how to use the feature"
+          required: true
