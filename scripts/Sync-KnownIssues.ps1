@@ -78,7 +78,7 @@ function Get-AllGitHubIssues {
             break
         }
 
-        $issues += $batchItems | Where-Object { -not $_.pull_request }
+        $issues += $batchItems | Where-Object { -not ($_.PSObject.Properties.Name -contains 'pull_request') }
 
         if ($batchItems.Count -lt 100) {
             break
@@ -93,7 +93,30 @@ function Get-AllGitHubIssues {
 function Get-LabelNames {
     param($Issue)
 
-    return @($Issue.labels | ForEach-Object { $_.name })
+    $source = $null
+
+    if ($Issue -is [System.Array]) {
+        $source = $Issue
+    }
+    elseif ($Issue.PSObject.Properties.Name -contains "Labels") {
+        $source = $Issue.Labels
+    }
+    elseif ($Issue.PSObject.Properties.Name -contains "labels") {
+        $source = $Issue.labels
+    }
+
+    return @(
+        @($source) |
+        ForEach-Object {
+            if ($_ -is [string]) {
+                $_
+            }
+            elseif ($_.PSObject.Properties.Name -contains "name") {
+                $_.name
+            }
+        } |
+        Where-Object { $_ }
+    )
 }
 
 function Test-HasLabel {
@@ -131,6 +154,8 @@ function Get-ModDisplay {
 
     $modMap = [ordered]@{
         "mod:big3" = "Big 3 Mod"
+        "mod:aspirations" = "Astrological Aspirations"
+        "mod:Simstrology" = "Simstrology Mod"
         "mod:careers" = "Simstrology Career Mod"
         "mod:degrees" = "Simstrology Degree Mod"
         "mod:skills" = "Simstrology Skill Mod"
@@ -150,6 +175,34 @@ function Get-ModDisplay {
     return ($mods -join ", ")
 }
 
+function Test-HasAnyModLabel {
+    param([string[]]$Labels)
+
+    return @($Labels | Where-Object { $_ -like "mod:*" }).Count -gt 0
+}
+
+function Get-EffectiveType {
+    param([string[]]$Labels)
+
+    if ($Labels -contains "type:compatibility") {
+        return "type:compatibility"
+    }
+
+    if ($Labels -contains "type:balance") {
+        return "type:balance"
+    }
+
+    if ($Labels -contains "type:support") {
+        return "type:support"
+    }
+
+    if (($Labels -contains "type:bug") -or (Test-HasAnyModLabel -Labels $Labels)) {
+        return "type:bug"
+    }
+
+    return "type:unknown"
+}
+
 function Format-IssueBullet {
     param($Issue)
 
@@ -157,8 +210,15 @@ function Format-IssueBullet {
     $modDisplay = Get-ModDisplay -Labels $labels
     $status = Get-PrimaryStatus -Labels $labels
     $safeTitle = ($Issue.title -replace '\r?\n', ' ').Trim()
+    if ($Issue.PSObject.Properties.Name -contains "Title") {
+        $safeTitle = ($Issue.Title -replace '\r?\n', ' ').Trim()
+    }
+    $statusDisplay = $status
+    if ($status -eq "status:unlabeled") {
+        $statusDisplay = "open"
+    }
 
-    return "- [#$($Issue.number) $safeTitle](../../issues/$($Issue.number)) - $modDisplay - ``$status``"
+    return "- [#$($Issue.Number) $safeTitle](../../issues/$($Issue.Number)) - $modDisplay - ``$statusDisplay``"
 }
 
 function Add-Section {
@@ -200,8 +260,9 @@ $normalized = foreach ($issue in $allIssues) {
         ClosedAt    = $issue.closed_at
         Labels      = $labels
         Status      = Get-PrimaryStatus -Labels $labels
-        TypeBug     = Test-HasLabel -Labels $labels -Label "type:bug"
-        TypeCompat  = Test-HasLabel -Labels $labels -Label "type:compatibility"
+        EffectiveType = Get-EffectiveType -Labels $labels
+        TypeBug     = (Get-EffectiveType -Labels $labels) -eq "type:bug"
+        TypeCompat  = (Get-EffectiveType -Labels $labels) -eq "type:compatibility"
         SeverityCrit = Test-HasLabel -Labels $labels -Label "severity:critical"
     }
 }
@@ -212,19 +273,19 @@ $confirmedStatuses = @("status:confirmed", "status:in-progress", "status:fixed-n
 
 $criticalIssues = @(
     $openIssues |
-    Where-Object { $_.TypeBug -and $_.SeverityCrit -and $_.Status -in $confirmedStatuses } |
+    Where-Object { $_.TypeBug -and $_.SeverityCrit -and (($_.Status -in $confirmedStatuses) -or ($_.Status -eq "status:unlabeled")) } |
     Sort-Object Number
 )
 
 $openBugs = @(
     $openIssues |
-    Where-Object { $_.TypeBug -and $_.Status -in $confirmedStatuses } |
+    Where-Object { $_.TypeBug -and (($_.Status -in $confirmedStatuses) -or ($_.Status -eq "status:unlabeled")) } |
     Sort-Object Number
 )
 
 $compatibilityIssues = @(
     $openIssues |
-    Where-Object { $_.TypeCompat -and $_.Status -in $confirmedStatuses } |
+    Where-Object { $_.TypeCompat -and (($_.Status -in $confirmedStatuses) -or ($_.Status -eq "status:unlabeled")) } |
     Sort-Object Number
 )
 

@@ -11,7 +11,7 @@ Only confirmed issues and released fixes are listed below. New reports with `sta
 ## Current Status
 
 - Confirmed critical issues: 0
-- Confirmed open bugs: 0
+- Confirmed open bugs: 3
 - Confirmed compatibility issues: 0
 - Released fixes listed below: 0
 - Open reports still under review: 0
@@ -26,7 +26,9 @@ None currently.
 
 ## Open Bugs We're Working On
 
-No confirmed bugs are listed here yet.
+- [#2 Some sims are getting two rising signs](../../issues/2) - Simstrology Mod - `open`
+- [#3 Cheat Menu - Issue with pie menu](../../issues/3) - Simstrology Mod - `open`
+- [#4 Natal Hub Menu issue](../../issues/4) - Simstrology Mod - `open`
 
 ---
 
