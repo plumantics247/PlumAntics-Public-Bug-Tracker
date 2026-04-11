@@ -16,7 +16,8 @@ body:
       label: Which mod?
       description: What mod is the issue with?
       options:
-        - "Big 3 Mod (Astrological Aspirations)"
+        - "Simstrology Mod"
+        - "Simstrological Aspirations"
         - "Simstrology Career Mod"
         - "Simstrology Degree Mod"
         - "Simstrology Skill Mod"

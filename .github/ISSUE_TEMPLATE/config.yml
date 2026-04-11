@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
   - name: Questions or Help
-    url: https://www.patreon.com/timgonzalez
+    url: https://www.patreon.com/c/PlumAntics
     about: Join us on Patreon for direct questions and chat
   - name: Quick feedback
-    url: https://timgonzalez.itch.io
+    url: https://plumantics.itch.io/
     about: Leave comments on itch.io pages
   - name: CurseForge
-    url: https://www.curseforge.com/
+    url: https://www.curseforge.com/members/plum_antics/projects
     about: Check the mod pages on CurseForge

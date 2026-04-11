@@ -19,7 +19,8 @@ body:
       label: Which PlumAntics mod?
       description: Which of our mods is involved?
       options:
-        - "Big 3 Mod (Astrological Aspirations)"
+        - "Simstrology Mod"
+        - "Simstrological Aspirations"
         - "Simstrology Career Mod"
         - "Simstrology Degree Mod"
         - "Simstrology Skill Mod"

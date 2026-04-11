@@ -26,7 +26,8 @@ body:
       label: Which mod?
       description: What mod's feature are you giving feedback on?
       options:
-        - "Big 3 Mod (Astrological Aspirations)"
+        - "Simstrology Mod"
+        - "Simstrological Aspirations"
         - "Simstrology Career Mod"
         - "Simstrology Degree Mod"
         - "Simstrology Skill Mod"

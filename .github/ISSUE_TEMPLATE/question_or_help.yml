@@ -23,7 +23,8 @@ body:
       label: Which mod?
       description: What mod is your question about?
       options:
-        - "Big 3 Mod (Astrological Aspirations)"
+        - "Simstrology Mod"
+        - "Simstrological Aspirations"
         - "Simstrology Career Mod"
         - "Simstrology Degree Mod"
         - "Simstrology Skill Mod"
