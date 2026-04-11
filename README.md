@@ -81,12 +81,12 @@ If something crosses the line, we'll close it.
 
 ## Still Need Help?
 
-- **Patreon:** [timgonzalez on Patreon](https://www.patreon.com/timgonzalez) — DMs and posts
-- **Itch.io:** [timgonzalez on itch.io](https://timgonzalez.itch.io/) — Comments section
-- **CurseForge:** [PlumAntics mods](https://www.curseforge.com/) — Comments section
+- **Patreon:** [PlumAntics on Patreon](https://www.patreon.com/c/PlumAntics) — DMs and posts
+- **Itch.io:** [PlumAntics on itch.io](https://plumantics.itch.io/) — Comments section
+- **CurseForge:** [PlumAntics mods](https://www.curseforge.com/members/plum_antics/projects) — Comments section
 
 Those platforms are also great places to chat or ask quick questions.
 
 ---
 
-**Last updated:** March 2026
+**Last updated:** April 2026
