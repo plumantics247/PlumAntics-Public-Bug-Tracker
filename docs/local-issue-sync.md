@@ -41,11 +41,14 @@ The generated page depends on these labels:
 - `type:bug`
 - `type:compatibility`
 - `severity:critical`
-- `mod:big3`
+- `mod:aspirations`
+- `mod:Simstrology`
 - `mod:careers`
 - `mod:degrees`
 - `mod:skills`
 - `mod:childhood`
+
+If an open issue has a `mod:*` label but no explicit `type:*` label yet, the sync treats it as a bug by default so it can still appear in `known-issues.md` while you triage it.
 
 ## Useful Pattern
 

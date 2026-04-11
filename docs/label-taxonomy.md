@@ -88,8 +88,11 @@ Small issue with low impact.
 
 Which mod does this affect?
 
-### mod:big3
-Big 3 Mod (Astrological Aspirations)
+### mod:aspirations
+Astrological Aspirations
+
+### mod:Simstrology
+Simstrology Mod
 
 ### mod:careers
 Simstrology Career Mod
@@ -129,4 +132,4 @@ Simstrology Childhood Mod
 
 ---
 
-**Last updated:** March 2026
+**Last updated:** April 11, 2026

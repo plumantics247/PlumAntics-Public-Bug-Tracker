@@ -26,9 +26,9 @@ None currently.
 
 ## Open Bugs We're Working On
 
-- [#2 Some sims are getting two rising signs](../../issues/2) - Simstrology Mod - `open`
-- [#3 Cheat Menu - Issue with pie menu](../../issues/3) - Simstrology Mod - `open`
-- [#4 Natal Hub Menu issue](../../issues/4) - Simstrology Mod - `open`
+- [#2 Some sims are getting two rising signs](../../issues/2) - Simstrology Mod - `status:confirmed`
+- [#3 Cheat Menu - Issue with pie menu](../../issues/3) - Simstrology Mod - `status:confirmed`
+- [#4 Natal Hub Menu issue](../../issues/4) - Simstrology Mod - `status:confirmed`
 
 ---
 
