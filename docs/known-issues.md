@@ -64,4 +64,4 @@ No released fixes are listed yet.
 
 ---
 
-**Last synced:** April 11, 2026 from `https://github.com/timgonzalez1969-cmyk/PlumAntics-Public-Bug-Tracker`
+**Last synced:** April 11, 2026 from `https://github.com/plumantics247/PlumAntics-Public-Bug-Tracker`
