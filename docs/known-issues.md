@@ -10,8 +10,8 @@ Only confirmed issues and released fixes are listed below. New reports with `sta
 
 ## Current Status
 
-- Confirmed critical issues: 0
-- Confirmed open bugs: 3
+- Confirmed critical issues: 1
+- Confirmed open bugs: 6
 - Confirmed compatibility issues: 0
 - Released fixes listed below: 0
 - Open reports still under review: 0
@@ -20,7 +20,7 @@ Only confirmed issues and released fixes are listed below. New reports with `sta
 
 ## Critical Issues
 
-None currently.
+- [#5 LE when using Career Mod](../../issues/5) - Simstrology Mod, Simstrology Career Mod - `status:confirmed`
 
 ---
 
@@ -29,6 +29,9 @@ None currently.
 - [#2 Some sims are getting two rising signs](../../issues/2) - Simstrology Mod - `status:confirmed`
 - [#3 Cheat Menu - Issue with pie menu](../../issues/3) - Simstrology Mod - `status:confirmed`
 - [#4 Natal Hub Menu issue](../../issues/4) - Simstrology Mod - `status:confirmed`
+- [#5 LE when using Career Mod](../../issues/5) - Simstrology Mod, Simstrology Career Mod - `status:confirmed`
+- [#6 Career Path fixes](../../issues/6) - Simstrology Mod, Simstrology Career Mod - `status:confirmed`
+- [#7 Simstrology Lite Missing Friendly Interactions from Simstrology V2.0](../../issues/7) - Simstrology Mod, Simstrology Career Mod, Simstrology Skill Mod - `status:confirmed`
 
 ---
 
