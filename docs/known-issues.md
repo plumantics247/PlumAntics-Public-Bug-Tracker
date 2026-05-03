@@ -46,7 +46,10 @@ Check here before reporting. If something is already confirmed, you may find it 
 
 ## Known Mod Conflicts
 
-No confirmed mod conflicts are listed here yet.
+- `BrickLion_Emotions2.0`
+  This mod changes moodlet behavior in a way that can cause Simstrology retrograde moodlets to override or dominate most other moodlets, even when the retrograde mood gain is only set to `+1`.
+- `RoBurky's Meaningful Stories`
+  This mod reprioritizes emotional state and moodlet handling in a way that can cause Simstrology retrograde moodlets to supersede most other moodlets, even when the retrograde mood gain is only set to `+1`.
 
 ---
 
